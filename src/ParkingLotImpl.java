@@ -4,34 +4,57 @@ public class ParkingLotImpl implements ParkingLot {
 
     @Override
     public Status addTwoWheeler(String _namePlate) {
-        idValue++;
-        TwoWheeler.currentTotalNumberOfTwoWheelers++;
-        TwoWheeler newTwoWheeler = new TwoWheeler(_namePlate, idValue);
-        GLOBAL_CONSTANTS.twoWheelerHashMapObj.put(newTwoWheeler.id, newTwoWheeler);
+        try {
+            idValue++;
+            TwoWheeler.currentTotalNumberOfTwoWheelers++;
+            TwoWheeler newTwoWheeler = new TwoWheeler(_namePlate, idValue);
+            GLOBAL_CONSTANTS.twoWheelerHashMapObj.put(newTwoWheeler.id, newTwoWheeler);
+        }
+        catch(Exception e) {
+            return new Status(false, GLOBAL_CONSTANTS.ERROR);
+        }
 
         return new Status(true, GLOBAL_CONSTANTS.SUCCESS);
     }
 
     @Override
     public Status addFourWheeler(String _namePlate) {
-        idValue++;
-        FourWheeler.currentTotalNumberOfFourWheelers++;
-        FourWheeler newFourWheeler = new FourWheeler(_namePlate, idValue);
-        GLOBAL_CONSTANTS.fourWheelerHashMapObj.put(newFourWheeler.id, newFourWheeler);
+        try {
+            idValue++;
+            FourWheeler.currentTotalNumberOfFourWheelers++;
+            FourWheeler newFourWheeler = new FourWheeler(_namePlate, idValue);
+            GLOBAL_CONSTANTS.fourWheelerHashMapObj.put(newFourWheeler.id, newFourWheeler);
+        }
+        catch(Exception e) {
+            return new Status(false, GLOBAL_CONSTANTS.ERROR);
+        }
+
         return new Status(true, GLOBAL_CONSTANTS.SUCCESS);
     }
 
     @Override
     public Status removeTwoWheeler(String _id) {
-        TwoWheeler.currentTotalNumberOfTwoWheelers--;
-        GLOBAL_CONSTANTS.twoWheelerHashMapObj.remove(_id);
+        try {
+            TwoWheeler.currentTotalNumberOfTwoWheelers--;
+            GLOBAL_CONSTANTS.twoWheelerHashMapObj.remove(_id);
+        }
+        catch(Exception e) {
+            return new Status(false, GLOBAL_CONSTANTS.ERROR);
+        }
+
         return new Status(true, GLOBAL_CONSTANTS.SUCCESS);
     }
 
     @Override
     public Status removeFourWheeler(String _id) {
-        FourWheeler.currentTotalNumberOfFourWheelers--;
-        GLOBAL_CONSTANTS.fourWheelerHashMapObj.remove(_id);
+        try {
+            FourWheeler.currentTotalNumberOfFourWheelers--;
+            GLOBAL_CONSTANTS.fourWheelerHashMapObj.remove(_id);
+        }
+        catch(Exception e) {
+            return new Status(false, GLOBAL_CONSTANTS.ERROR);
+        }
+
         return new Status(true, GLOBAL_CONSTANTS.SUCCESS);
     }
 
@@ -75,7 +98,6 @@ public class ParkingLotImpl implements ParkingLot {
         System.out.println("Printing four wheelers....");
         for(String id: GLOBAL_CONSTANTS.fourWheelerHashMapObj.keySet()){
             System.out.print(id + "\t");
-
         }
         System.out.println("\n");
     }
