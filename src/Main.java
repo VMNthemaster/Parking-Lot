@@ -27,6 +27,7 @@ public class Main {
                     parkingLotObj.printTwoWheelerKeys();
                     parkingLotObj.printFourWheelerKeys();
                     break;
+
                 }
                 default: {
                     System.out.println("Incorrect value chosen...");
