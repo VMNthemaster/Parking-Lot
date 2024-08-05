@@ -1,5 +1,5 @@
 import java.util.Scanner;
-// implement clear function
+
 public class Main {
 
     public static void main(String[] args) {
@@ -86,6 +86,8 @@ public class Main {
         switch (choice) {
             case 1: {
                 boolean isParkingAvailable = _parkingLotImplObj.isTwoWheelerParkingAvailable();
+                System.out.println(isParkingAvailable);
+                System.out.println(TwoWheeler.currentTotalNumberOfTwoWheelers);
                 if (isParkingAvailable) {
                     System.out.println("Enter name-plate: ");
                     String namePlate = sc.next();

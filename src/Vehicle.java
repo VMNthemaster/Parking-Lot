@@ -1,6 +1,6 @@
 public class Vehicle {
 
-    String id;
-    String namePlate;
-    long inTime;
+    public String id;
+    public String namePlate;
+    public long inTime;
 }
