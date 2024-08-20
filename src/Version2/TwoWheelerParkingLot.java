@@ -12,7 +12,7 @@ public class TwoWheelerParkingLot extends ParkingLotImpl {
 
     @Override
     public boolean isParkingSpotAvailable(){
-        return TwoWheelerParkingLot.currentTotalNumOfTwoWheelers < GLOBAL_CONSTANTS.TWO_WHEELER_PARKING;
+        return TwoWheelerParkingLot.currentTotalNumOfTwoWheelers < Parking.TWO_WHEELER_PARKING.getValue();
     }
 
     public static int getCurrentTotalNumOfTwoWheelers() {

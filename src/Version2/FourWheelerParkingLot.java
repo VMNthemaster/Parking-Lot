@@ -16,7 +16,7 @@ public class FourWheelerParkingLot extends ParkingLotImpl {
 
     @Override
     public boolean isParkingSpotAvailable(){
-        return FourWheelerParkingLot.currentTotalNumOfFourWheelers < GLOBAL_CONSTANTS.FOUR_WHEELER_PARKING;
+        return FourWheelerParkingLot.currentTotalNumOfFourWheelers < Parking.FOUR_WHEELER_PARKING.getValue();
     }
 
     @Override

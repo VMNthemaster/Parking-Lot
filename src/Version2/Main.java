@@ -3,6 +3,8 @@ package Version2;
 import java.util.Objects;
 import java.util.Scanner;
 
+// write enums instead of global constants wherever possible
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -21,12 +23,12 @@ public class Main {
             switch (type) {
                 case 1: {
                     parkingLot = twoWheelerParkingLot;
-                    performAction(parkingLot, GLOBAL_CONSTANTS.TWO_WHEELER);
+                    performAction(parkingLot, String.valueOf(ParkingType.TWO_WHEELER.getValue()));
                     break;
                 }
                 case 2: {
                     parkingLot = fourWheelerParkingLot;
-                    performAction(parkingLot, GLOBAL_CONSTANTS.FOUR_WHEELER);
+                    performAction(parkingLot, String.valueOf(ParkingType.FOUR_WHEELER.getValue()));
                     break;
                 }
                 case 3: {
