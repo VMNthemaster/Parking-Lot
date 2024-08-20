@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public abstract class GLOBAL_CONSTANTS {
-    final static int TWO_WHEELER_PARKING = 2;
+    final static int TWO_WHEELER_PARKING = 20;
     final static int FOUR_WHEELER_PARKING = 20;
     final static float LOAD_FACTOR = 1.0f;
     final static String TWO_WHEELER = "TW";

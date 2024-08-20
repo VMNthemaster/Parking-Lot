@@ -11,7 +11,6 @@ public class Main {
         TwoWheelerParkingLot twoWheelerParkingLot = new TwoWheelerParkingLot();
         ParkingLotImpl fourWheelerParkingLot = new FourWheelerParkingLot();
 
-
         int flag = 0;
         int type;
 
@@ -55,6 +54,8 @@ public class Main {
             System.out.println("Press 0 to continue: ");
             flag = sc.nextInt();
         }
+
+        System.out.println("Total amount for today is: Rs " + PaymentImpl.getTotalAmount());
     }
 
     private static VehicleInfo getRecord(String id) {
@@ -110,6 +111,16 @@ public class Main {
                     int ticket = parkingLot.calculateTicket(vehicleInfo);
                     vehicleInfo.setTicket(ticket);
                     parkingLot.updateCurrentValue(-1);
+
+                    PaymentImpl payment = new PaymentImpl();
+                    int paidTicket = 0;
+
+                    while (paidTicket != ticket){
+                        System.out.println("Your ticket amount is: Rs " + ticket);
+                        System.out.println("Please enter your ticket amount to pay: ");
+                        paidTicket = sc.nextInt();
+                    }
+                    payment.payTicket(ticket);
 
                     Status status = parkingLot.removeVehicle(id);
 

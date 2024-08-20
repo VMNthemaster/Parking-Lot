@@ -1,7 +1,7 @@
 package Version2;
 
 public class VehicleInfo extends Vehicle {
-    private long inTime;
+    final private long inTime;
     private long outTime;
     private int ticket;
     String id;
